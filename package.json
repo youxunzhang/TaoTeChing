@@ -1,0 +1,24 @@
+{
+  "name": "tao-te-ching-website",
+  "version": "1.0.0",
+  "description": "A beautiful website for reading the Tao Te Ching with both Chinese original text and English translations",
+  "main": "generate-chapters.js",
+  "scripts": {
+    "generate": "node generate-chapters.js",
+    "start": "python -m http.server 8000",
+    "build": "node generate-chapters.js"
+  },
+  "keywords": [
+    "tao-te-ching",
+    "dao-de-jing",
+    "laozi",
+    "philosophy",
+    "taoism",
+    "chinese-literature"
+  ],
+  "author": "Tao Te Ching Website",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

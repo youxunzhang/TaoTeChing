@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tao Te Ching - The Way of Virtue | Read All 81 Chapters Online</title>
+    <meta name="description" content="Read the complete Tao Te Ching (道德经) by Laozi online. Explore all 81 chapters of ancient Chinese wisdom with original text and English translations. Perfect for philosophy students and wisdom seekers.">
+    <meta name="keywords" content="Tao Te Ching, Dao De Jing, Laozi, Lao Tzu, Chinese philosophy, Taoism, ancient wisdom, 81 chapters, philosophy, spirituality">
+    <meta name="author" content="Tao Te Ching Online">
+    <meta property="og:title" content="Tao Te Ching - The Way of Virtue | Read All 81 Chapters Online">
+    <meta property="og:description" content="Explore the complete Tao Te Ching with original Chinese text and English translations. Ancient wisdom for modern times.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tao Te Ching - The Way of Virtue">
+    <meta name="twitter:description" content="Read the complete Tao Te Ching online with original text and translations.">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        "name": "Tao Te Ching",
+        "alternateName": "Dao De Jing",
+        "author": {
+            "@type": "Person",
+            "name": "Laozi"
+        },
+        "datePublished": "-600",
+        "genre": "Philosophy",
+        "inLanguage": ["zh", "en"],
+        "description": "The Tao Te Ching, along with the Zhuangzi, is a fundamental text for both philosophical and religious Taoism.",
+        "numberOfPages": "81 chapters"
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Crimson Text', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTUiIHN0cm9rZT0iIzM3NEZBOSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xNiA4QzIwIDggMjMgMTEgMjMgMTVDMjMgMTkgMjAgMjIgMTYgMjJDMTIgMjIgOSAxOSA5IDE1QzkgMTEgMTIgOCAxNiA4WiIgZmlsbD0iIzM3NEZBOSIvPgo8Y2lyY2xlIGN4PSIxNiIgY3k9IjE1IiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+    <header class="bg-gray-50 border-b border-gray-200 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-serif font-semibold text-gray-900">Tao Te Ching</h1>
+                    <p class="text-sm text-gray-500">道德经 - The Way of Virtue</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="searchToggle" class="p-2 text-gray-600 hover:text-blue-600 transition-colors" aria-label="Toggle search">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                    <button id="menuToggle" class="md:hidden p-2 text-gray-600 hover:text-blue-600 transition-colors" aria-label="Toggle menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div id="searchContainer" class="hidden mt-4 transition-all duration-300">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search chapters by number, title, or content..."
+                        class="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        autocomplete="off"
+                    >
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div id="searchResults" class="hidden mt-2 bg-white border border-gray-200 rounded-lg shadow-lg max-h-96 overflow-y-auto"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mx-auto px-6 py-12 md:py-20">
+            <section class="text-center mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4">Journey Through Ancient Wisdom</h2>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed text-lg">
+                    The Tao Te Ching, written by Laozi in the 6th century BC, is one of the most influential texts in Chinese philosophy. 
+                    Explore its 81 chapters of profound wisdom about the nature of existence, virtue, and the Way.
+                </p>
+                <div class="mt-8 flex justify-center items-center space-x-8 md:space-x-16">
+                    <div class="stat text-center">
+                        <span class="text-3xl font-bold text-blue-600 block">81</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Chapters</span>
+                    </div>
+                    <div class="stat text-center">
+                        <span class="text-3xl font-bold text-blue-600 block">6th Century BC</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Written</span>
+                    </div>
+                    <div class="stat text-center">
+                        <span class="text-3xl font-bold text-blue-600 block">Laozi</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider">Author</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Navigation -->
+            <section class="mb-16">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-center text-gray-900 mb-8">Quick Navigation</h2>
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button class="filter-btn active" data-filter="all">All Chapters</button>
+                    <button class="filter-btn" data-filter="1-20">Chapters 1-20</button>
+                    <button class="filter-btn" data-filter="21-40">Chapters 21-40</button>
+                    <button class="filter-btn" data-filter="41-60">Chapters 41-60</button>
+                    <button class="filter-btn" data-filter="61-81">Chapters 61-81</button>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-gray-700">Reading Progress</span>
+                        <span class="text-sm text-gray-500" id="progressText">0 of 81 chapters read</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 0%" id="progressBar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="chapters mb-16 md:mb-24">
+                <h2 class="text-2xl md:text-3xl font-serif font-bold text-center text-gray-900 mb-10">Browse Chapters</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="chapterGrid">
+                    <!-- Chapters will be generated by JavaScript -->
+                </div>
+            </section>
+
+            <section class="about bg-gray-50 rounded-lg p-8 md:p-12">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-serif font-bold text-center text-gray-900 mb-8">About the Tao Te Ching</h2>
+                    <div class="space-y-6 text-gray-600 leading-relaxed">
+                        <p>
+                            The Tao Te Ching is a classical Chinese text traditionally credited to the 6th-century BC sage Laozi. 
+                            The text's authorship, date of composition and date of compilation are debated. The oldest excavated 
+                            portion dates back to the late 4th century BC, but modern scholarship dates other parts of the text 
+                            as having been written—or at least compiled—later than the earliest portions of the Zhuangzi.
+                        </p>
+                        <p>
+                            The Tao Te Ching, along with the Zhuangzi, is a fundamental text for both philosophical and religious 
+                            Taoism. It also strongly influenced other schools of Chinese philosophy and religion, including Legalism, 
+                            Confucianism, and Chinese Buddhism, which was largely interpreted through the use of Taoist words and concepts when it was originally introduced to China.
+                        </p>
+                        <p>
+                            Many translations of the text are available in different languages. The Tao Te Ching remains one of the most translated texts in world literature, providing wisdom and guidance to readers across cultures for over two millennia.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 mt-12">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center">
+                <p class="text-gray-600 mb-4">&copy; 2024 Tao Te Ching Reading Site. Ancient wisdom for modern times.</p>
+                <div class="flex justify-center space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-blue-600 transition-colors">About</a>
+                    <a href="#" class="hover:text-blue-600 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
