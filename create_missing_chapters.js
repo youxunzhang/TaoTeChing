@@ -1,10 +1,18 @@
-<!DOCTYPE html>
+// 简单的章节生成器 - 生成缺失章节的HTML内容
+// 由于没有Node.js，这个文件可以在浏览器控制台中运行
+
+// 标准章节模板
+function generateChapterHTML(chapterNumber) {
+    const prevChapter = chapterNumber > 1 ? chapterNumber - 1 : null;
+    const nextChapter = chapterNumber < 81 ? chapterNumber + 1 : null;
+    
+    return `<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 22: Yielding - Tao Te Ching</title>
-    <meta name="description" content="Read Chapter 22 of the Tao Te Ching: Yielding. Original Chinese text with English translation.">
+    <title>Chapter ${chapterNumber} - Tao Te Ching</title>
+    <meta name="description" content="Read Chapter ${chapterNumber} of the Tao Te Ching. Original Chinese text with English translation.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,47 +43,24 @@
     <main class="container mx-auto px-6 py-12 md:py-16">
         <div class="max-w-3xl mx-auto">
             <header class="text-center mb-12">
-                <span class="text-md font-semibold text-blue-600">Chapter 22</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">Yielding</h2>
+                <span class="text-md font-semibold text-blue-600">Chapter ${chapterNumber}</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">Chapter ${chapterNumber}</h2>
             </header>
 
             <div class="space-y-12">
                 <section>
                     <h3 class="text-lg font-semibold uppercase tracking-wider text-gray-500 border-b pb-3 mb-6">Original Chinese</h3>
                     <div class="font-serif text-xl md:text-2xl text-gray-800 leading-loose">
-                        曲則全，枉則直，<br>
-                        窪則盈，敝則新，<br>
-                        少則得，多則惑。<br>
-                        是以聖人抱一為天下式。<br>
-                        不自見，故明；<br>
-                        不自是，故彰；<br>
-                        不自伐，故有功；<br>
-                        不自矜，故長。<br>
-                        夫唯不爭，故天下莫能與之爭。
+                        第${chapterNumber}章原文<br>
+                        此處應包含道德經第${chapterNumber}章的中文原文...
                     </div>
                 </section>
 
                 <section>
                     <h3 class="text-lg font-semibold uppercase tracking-wider text-gray-500 border-b pb-3 mb-6">English Translation</h3>
                     <p class="text-gray-700 leading-relaxed md:text-lg">
-                        The yielding will have a complete life.<br>
-                        The crooked will be straightened.<br>
-                        The empty will be filled.<br>
-                        The worn will be renewed.<br>
-                        The few will get.<br>
-                        The many will be confused.<br>
-                        Therefore the sage embraces the one<br>
-                        and becomes the model of the world.<br>
-                        He does not display himself,<br>
-                        therefore he is illuminated.<br>
-                        He does not define himself,<br>
-                        therefore he is distinguished.<br>
-                        He does not boast,<br>
-                        therefore he is credited.<br>
-                        He is not prideful,<br>
-                        therefore he is the chief.<br>
-                        It is because he is not competitive<br>
-                        that the world cannot compete with him.
+                        Chapter ${chapterNumber} English translation<br>
+                        This should contain the English translation of Chapter ${chapterNumber} of the Tao Te Ching...
                     </p>
                 </section>
 
@@ -90,9 +75,15 @@
             </div>
 
             <nav class="flex justify-between items-center mt-16 pt-8 border-t border-gray-200">
-                <a href="chapter-21.html" class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">← Chapter 21</a>
+                ${prevChapter ? 
+                    `<a href="chapter-${prevChapter}.html" class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">← Chapter ${prevChapter}</a>` :
+                    '<div></div>'
+                }
                 <a href="index.html" class="px-4 py-2 bg-blue-600 text-white rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">Back to All Chapters</a>
-                <a href="chapter-23.html" class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">Chapter 23 →</a>
+                ${nextChapter ? 
+                    `<a href="chapter-${nextChapter}.html" class="px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors">Chapter ${nextChapter} →</a>` :
+                    '<div class="px-4 py-2 text-sm text-gray-400">Final Chapter</div>'
+                }
             </nav>
         </div>
     </main>
@@ -104,4 +95,30 @@
     </footer>
     <script src="script.js"></script>
 </body>
-</html> 
+</html>`;
+}
+
+// 需要创建的章节列表（排除已存在的）
+const existingChapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,43,44,45,46,47,48,49,50,60,70,80,81];
+const missingChapters = [];
+
+for (let i = 1; i <= 81; i++) {
+    if (!existingChapters.includes(i)) {
+        missingChapters.push(i);
+    }
+}
+
+// 在浏览器控制台中运行此函数来生成所有缺失章节的HTML
+function generateAllMissingChapters() {
+    missingChapters.forEach(chapterNum => {
+        const html = generateChapterHTML(chapterNum);
+        console.log(`=== Chapter ${chapterNum} HTML ===`);
+        console.log(html);
+        console.log('\n');
+    });
+}
+
+// 使用说明:
+// 1. 在浏览器控制台中粘贴此代码
+// 2. 运行 generateAllMissingChapters()
+// 3. 复制输出的HTML内容到对应的chapter-XX.html文件中 
