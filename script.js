@@ -388,7 +388,7 @@ function displaySearchResults(results) {
         results.forEach(chapter => {
             const item = document.createElement('a');
             item.href = `chapter-${chapter.number}.html`;
-            item.className = 'block p-4 hover:bg-gray-50 border-b border-gray-100 transition-colors';
+            item.className = 'search-result-item';
             
             const preview = chapter.english.substring(0, 100) + (chapter.english.length > 100 ? '...' : '');
             
@@ -527,19 +527,23 @@ function addCustomStyles() {
     const style = document.createElement('style');
     style.textContent = `
         .filter-btn {
-            @apply px-4 py-2 text-sm font-medium border border-gray-300 rounded-md transition-all duration-200;
+            @apply px-6 py-3 text-sm font-medium border border-slate-300 rounded-xl transition-all duration-300 bg-white shadow-sm;
         }
         
         .filter-btn:hover {
-            @apply bg-gray-50 border-gray-400;
+            @apply bg-slate-50 border-slate-400 shadow-md transform -translate-y-0.5;
         }
         
         .filter-btn.active {
-            @apply bg-blue-600 text-white border-blue-600;
+            @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white border-primary-600 shadow-lg transform -translate-y-0.5;
+        }
+        
+        .chapter-card {
+            @apply bg-white border border-slate-200 rounded-xl p-6 hover:shadow-xl hover:border-primary-300 transition-all duration-300 shadow-sm;
         }
         
         .chapter-card:hover {
-            transform: translateY(-2px);
+            transform: translateY(-4px);
         }
         
         .search-highlight {
@@ -553,6 +557,14 @@ function addCustomStyles() {
         
         #searchResults {
             animation: fadeIn 0.2s ease-out;
+        }
+        
+        .search-result-item {
+            @apply block p-4 hover:bg-slate-50 border-b border-slate-100 transition-colors rounded-lg;
+        }
+        
+        .search-result-item:last-child {
+            @apply border-b-0;
         }
     `;
     document.head.appendChild(style);

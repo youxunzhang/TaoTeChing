@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxation Games | Tao Te Ching</title>
+    <meta name="description" content="Take a break from reading with these calming games designed to help you relax and find inner peace. Inspired by Taoist wisdom.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-white to-blue-50 text-slate-800 font-sans min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md border-b border-slate-200/50 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-serif font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                            Tao Te Ching
+                        </a>
+                        <p class="text-xs text-slate-500 font-medium">道德经 - The Way of Virtue</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="index.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Home</a>
+                    <a href="laozi.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Laozi</a>
+                    <a href="zhuangzi.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Zhuangzi</a>
+                    <a href="timer.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Timer</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-50/50 via-transparent to-blue-50/50"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 mb-6 leading-tight">
+                        <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Relaxation Games</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl font-serif text-slate-700 mb-8">Find Your Inner Peace</p>
+                    <p class="max-w-3xl mx-auto text-slate-600 leading-relaxed text-lg md:text-xl">
+                        Take a mindful break from reading with these calming games inspired by Taoist wisdom
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Grid -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Choose Your Game</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Each game is designed to help you relax and find tranquility</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Breathing Game -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4 text-center">Breathing Circle</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6 text-center">
+                            Follow the gentle rhythm of an expanding and contracting circle to practice mindful breathing
+                        </p>
+                        <button onclick="startBreathingGame()" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-3 px-6 rounded-xl font-medium hover:from-green-600 hover:to-green-700 transition-all duration-300">
+                            Start Breathing
+                        </button>
+                    </div>
+
+                    <!-- Zen Garden -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4 text-center">Zen Garden</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6 text-center">
+                            Create your own peaceful garden by drawing patterns in virtual sand
+                        </p>
+                        <button onclick="startZenGarden()" class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+                            Create Garden
+                        </button>
+                    </div>
+
+                    <!-- Mindful Writing -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4 text-center">Mindful Writing</h3>
+                        <p class="text-slate-600 leading-relaxed mb-6 text-center">
+                            Type your thoughts and watch them fade away like morning mist
+                        </p>
+                        <button onclick="startMindfulWriting()" class="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white py-3 px-6 rounded-xl font-medium hover:from-purple-600 hover:to-purple-700 transition-all duration-300">
+                            Begin Writing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Container -->
+        <div id="gameContainer" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+            <div class="bg-white rounded-xl p-8 max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 id="gameTitle" class="text-2xl font-serif font-bold text-slate-900"></h3>
+                    <button onclick="closeGame()" class="text-slate-500 hover:text-slate-700 text-2xl font-bold">
+                        ×
+                    </button>
+                </div>
+                <div id="gameContent" class="min-h-[400px]"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h3 class="text-2xl font-serif font-bold mb-4">Tao Te Ching</h3>
+                <p class="text-slate-400 mb-8 max-w-2xl mx-auto">
+                    Ancient wisdom for modern times. Explore the profound teachings of Laozi through our complete collection of 81 chapters.
+                </p>
+                <div class="flex justify-center space-x-8 text-sm">
+                    <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Home</a>
+                    <a href="laozi.html" class="text-slate-400 hover:text-white transition-colors">Laozi</a>
+                    <a href="zhuangzi.html" class="text-slate-400 hover:text-white transition-colors">Zhuangzi</a>
+                    <a href="timer.html" class="text-slate-400 hover:text-white transition-colors">Timer</a>
+                </div>
+                <div class="mt-8 pt-8 border-t border-slate-800">
+                    <p class="text-slate-500">&copy; 2024 Tao Te Ching Reading Site. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Game functions
+        function startBreathingGame() {
+            document.getElementById('gameTitle').textContent = 'Breathing Circle';
+            document.getElementById('gameContent').innerHTML = `
+                <div class="text-center">
+                    <div id="breathingCircle" class="w-64 h-64 bg-gradient-to-r from-green-400 to-green-600 rounded-full mx-auto mb-8 transition-all duration-4 ease-in-out"></div>
+                    <p class="text-lg text-slate-600 mb-4">Follow the circle's rhythm</p>
+                    <p id="breathingText" class="text-2xl font-medium text-green-600">Breathe in...</p>
+                </div>
+            `;
+            document.getElementById('gameContainer').classList.remove('hidden');
+            
+            const circle = document.getElementById('breathingCircle');
+            const text = document.getElementById('breathingText');
+            let isInhaling = true;
+            
+            const breathingInterval = setInterval(() => {
+                if (isInhaling) {
+                    circle.style.transform = 'scale(1.5)';
+                    text.textContent = 'Breathe in...';
+                    isInhaling = false;
+                } else {
+                    circle.style.transform = 'scale(1)';
+                    text.textContent = 'Breathe out...';
+                    isInhaling = true;
+                }
+            }, 4000);
+            
+            window.currentGameInterval = breathingInterval;
+        }
+
+        function startZenGarden() {
+            document.getElementById('gameTitle').textContent = 'Zen Garden';
+            document.getElementById('gameContent').innerHTML = `
+                <div class="text-center">
+                    <canvas id="zenCanvas" width="600" height="400" class="border border-slate-300 rounded-lg cursor-crosshair"></canvas>
+                    <p class="text-lg text-slate-600 mt-4">Click and drag to create patterns in the sand</p>
+                    <button onclick="clearZenGarden()" class="mt-4 bg-slate-600 text-white px-4 py-2 rounded-lg hover:bg-slate-700 transition-colors">Clear Garden</button>
+                </div>
+            `;
+            document.getElementById('gameContainer').classList.remove('hidden');
+            
+            const canvas = document.getElementById('zenCanvas');
+            const ctx = canvas.getContext('2d');
+            let isDrawing = false;
+            
+            ctx.fillStyle = '#fef3c7';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseout', stopDrawing);
+            
+            function startDrawing(e) {
+                isDrawing = true;
+                draw(e);
+            }
+            
+            function draw(e) {
+                if (!isDrawing) return;
+                
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                ctx.fillStyle = '#d97706';
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            
+            function stopDrawing() {
+                isDrawing = false;
+            }
+            
+            window.clearZenGarden = function() {
+                ctx.fillStyle = '#fef3c7';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            };
+        }
+
+        function startMindfulWriting() {
+            document.getElementById('gameTitle').textContent = 'Mindful Writing';
+            document.getElementById('gameContent').innerHTML = `
+                <div class="text-center">
+                    <textarea id="mindfulTextarea" placeholder="Type your thoughts here..." class="w-full h-64 p-4 border border-slate-300 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"></textarea>
+                    <p class="text-lg text-slate-600 mt-4">Watch your thoughts fade away like morning mist</p>
+                    <button onclick="fadeText()" class="mt-4 bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors">Let It Fade</button>
+                </div>
+            `;
+            document.getElementById('gameContainer').classList.remove('hidden');
+            
+            window.fadeText = function() {
+                const textarea = document.getElementById('mindfulTextarea');
+                textarea.style.transition = 'opacity 3s ease-out';
+                textarea.style.opacity = '0';
+                
+                setTimeout(() => {
+                    textarea.value = '';
+                    textarea.style.opacity = '1';
+                }, 3000);
+            };
+        }
+
+        function closeGame() {
+            document.getElementById('gameContainer').classList.add('hidden');
+            if (window.currentGameInterval) {
+                clearInterval(window.currentGameInterval);
+                window.currentGameInterval = null;
+            }
+        }
+    </script>
+</body>
+</html>
