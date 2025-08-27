@@ -210,7 +210,7 @@ function updateChapterFile(chapterNum) {
     // Update chapter title
     content = content.replace(
         /<h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">.*?<\/h2>/,
-        `<h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">${data.title}</h2>`
+        `<h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mt-2">${seoContent.schemaHeadline.split(': ')[1]}</h2>`
     );
     
     fs.writeFileSync(filepath, content, 'utf8');
