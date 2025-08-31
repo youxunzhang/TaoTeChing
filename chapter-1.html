@@ -121,7 +121,15 @@
                 <h1 class="text-xl md:text-2xl font-serif font-semibold text-gray-900">Tao Te Ching</h1>
                 <p class="text-sm text-gray-500">The Way of Virtue</p>
             </div>
-            <a href="index.html" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Home</a>
+            <div class="flex items-center space-x-4">
+                <button id="bookmarkBtn" class="flex items-center space-x-1 text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors" onclick="toggleBookmark()">
+                    <svg id="bookmarkIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                    </svg>
+                    <span id="bookmarkText">收藏</span>
+                </button>
+                <a href="index.html" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">Home</a>
+            </div>
         </div>
     </header>
 
@@ -181,6 +189,13 @@
                     <h3 class="text-lg font-semibold uppercase tracking-wider text-gray-500 border-b pb-3 mb-6">English Translation</h3>
                     <p class="text-gray-700 leading-relaxed md:text-lg">
                         The Tao that can be spoken is not the eternal Tao.<br>The name that can be named is not the eternal name.<br>The nameless is the beginning of heaven and earth.<br>The named is the mother of ten thousand things.<br>Ever desireless, one can see the mystery.<br>Ever desiring, one can see the manifestations.<br>These two spring from the same source but differ in name;<br>this appears as darkness.<br>Darkness within darkness.<br>The gate to all mystery.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-lg font-semibold uppercase tracking-wider text-gray-500 border-b pb-3 mb-6">German Translation</h3>
+                    <p class="text-gray-700 leading-relaxed md:text-lg">
+                        Der Tao, der ausgesprochen werden kann, ist nicht der ewige Tao.<br>Der Name, der benannt werden kann, ist nicht der ewige Name.<br>Das Namenlose ist der Anfang von Himmel und Erde.<br>Das Benannte ist die Mutter der zehntausend Dinge.<br>Immer ohne Begierde, kann man das Geheimnis sehen.<br>Immer mit Begierde, kann man die Erscheinungen sehen.<br>Diese beiden entspringen derselben Quelle, unterscheiden sich aber im Namen;<br>dies erscheint als Dunkelheit.<br>Dunkelheit innerhalb der Dunkelheit.<br>Das Tor zu allem Geheimnis.
                     </p>
                 </section>
             </div>
