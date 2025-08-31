@@ -198,6 +198,13 @@
                         Der Tao, der ausgesprochen werden kann, ist nicht der ewige Tao.<br>Der Name, der benannt werden kann, ist nicht der ewige Name.<br>Das Namenlose ist der Anfang von Himmel und Erde.<br>Das Benannte ist die Mutter der zehntausend Dinge.<br>Immer ohne Begierde, kann man das Geheimnis sehen.<br>Immer mit Begierde, kann man die Erscheinungen sehen.<br>Diese beiden entspringen derselben Quelle, unterscheiden sich aber im Namen;<br>dies erscheint als Dunkelheit.<br>Dunkelheit innerhalb der Dunkelheit.<br>Das Tor zu allem Geheimnis.
                     </p>
                 </section>
+
+                <section>
+                    <h3 class="text-lg font-semibold uppercase tracking-wider text-gray-500 border-b pb-3 mb-6">简体中文</h3>
+                    <p class="text-gray-700 leading-relaxed md:text-lg">
+                        可以用言语表达的"道"，不是永恒的"道"；<br>可以用名称命名的"名"，不是永恒的"名"。<br>"无"是天地的开始；<br>"有"是万物的母亲。<br>所以，经常保持无欲的状态，可以观察"道"的奥妙；<br>经常保持有欲的状态，可以观察"道"的表现。<br>这两者同出于一个根源，但名称不同，<br>都可以称为玄妙。<br>玄妙而又玄妙，<br>是一切奥妙的门径。
+                    </p>
+                </section>
             </div>
 
             <nav class="flex justify-between items-center mt-16 pt-8 border-t border-gray-200">
@@ -213,5 +220,94 @@
             <p>&copy; 2024 Tao Te Ching Reading Site. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Bookmark functionality
+        function toggleBookmark() {
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const bookmarkIcon = document.getElementById('bookmarkIcon');
+            const bookmarkText = document.getElementById('bookmarkText');
+            
+            if (window.sidebar && window.sidebar.addPanel) {
+                // Mozilla Firefox
+                window.sidebar.addPanel(document.title, window.location.href, '');
+            } else if (window.external && ('AddFavorite' in window.external)) {
+                // Internet Explorer
+                window.external.AddFavorite(window.location.href, document.title);
+            } else {
+                // Modern browsers - show instructions
+                const url = window.location.href;
+                const title = document.title;
+                
+                // Try to add to bookmarks using the Web Share API if available
+                if (navigator.share) {
+                    navigator.share({
+                        title: title,
+                        url: url
+                    }).then(() => {
+                        showBookmarkMessage('页面已分享！');
+                    }).catch(() => {
+                        showBookmarkInstructions(url, title);
+                    });
+                } else {
+                    showBookmarkInstructions(url, title);
+                }
+            }
+            
+            // Visual feedback
+            bookmarkBtn.classList.add('text-blue-600');
+            bookmarkIcon.style.fill = 'currentColor';
+            setTimeout(() => {
+                bookmarkBtn.classList.remove('text-blue-600');
+                bookmarkIcon.style.fill = 'none';
+            }, 1000);
+        }
+        
+        function showBookmarkInstructions(url, title) {
+            const message = `请按 Ctrl+D (Windows) 或 Cmd+D (Mac) 来收藏此页面\n\n或者复制以下链接：\n${url}`;
+            alert(message);
+        }
+        
+        function showBookmarkMessage(message) {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10B981;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 1000;
+                font-size: 14px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Check if page is already bookmarked (basic check)
+        function checkIfBookmarked() {
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const bookmarkIcon = document.getElementById('bookmarkIcon');
+            
+            // This is a basic visual indicator - in a real implementation,
+            // you might want to use localStorage to remember user's preference
+            const isBookmarked = localStorage.getItem('bookmarked_' + window.location.pathname);
+            
+            if (isBookmarked === 'true') {
+                bookmarkBtn.classList.add('text-blue-600');
+                bookmarkIcon.style.fill = 'currentColor';
+            }
+        }
+        
+        // Initialize bookmark state
+        document.addEventListener('DOMContentLoaded', checkIfBookmarked);
+    </script>
 </body>
 </html> 
