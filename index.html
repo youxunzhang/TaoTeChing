@@ -106,6 +106,12 @@
                         <a href="games.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Games</a>
                         <a href="timer.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Timer</a>
                     </div>
+                    <button id="bookmarkBtn" class="flex items-center space-x-1 p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200" onclick="toggleBookmark()" aria-label="Bookmark this page">
+                        <svg id="bookmarkIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
+                        </svg>
+                        <span id="bookmarkText" class="hidden md:inline text-sm font-medium">收藏</span>
+                    </button>
                     <button id="searchToggle" class="p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200" aria-label="Toggle search">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -266,5 +272,94 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <script>
+        // Bookmark functionality
+        function toggleBookmark() {
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const bookmarkIcon = document.getElementById('bookmarkIcon');
+            const bookmarkText = document.getElementById('bookmarkText');
+            
+            if (window.sidebar && window.sidebar.addPanel) {
+                // Mozilla Firefox
+                window.sidebar.addPanel(document.title, window.location.href, '');
+            } else if (window.external && ('AddFavorite' in window.external)) {
+                // Internet Explorer
+                window.external.AddFavorite(window.location.href, document.title);
+            } else {
+                // Modern browsers - show instructions
+                const url = window.location.href;
+                const title = document.title;
+                
+                // Try to add to bookmarks using the Web Share API if available
+                if (navigator.share) {
+                    navigator.share({
+                        title: title,
+                        url: url
+                    }).then(() => {
+                        showBookmarkMessage('页面已分享！');
+                    }).catch(() => {
+                        showBookmarkInstructions(url, title);
+                    });
+                } else {
+                    showBookmarkInstructions(url, title);
+                }
+            }
+            
+            // Visual feedback
+            bookmarkBtn.classList.add('text-primary-600', 'bg-primary-50');
+            bookmarkIcon.style.fill = 'currentColor';
+            setTimeout(() => {
+                bookmarkBtn.classList.remove('text-primary-600', 'bg-primary-50');
+                bookmarkIcon.style.fill = 'none';
+            }, 1000);
+        }
+        
+        function showBookmarkInstructions(url, title) {
+            const message = `请按 Ctrl+D (Windows) 或 Cmd+D (Mac) 来收藏此页面\n\n或者复制以下链接：\n${url}`;
+            alert(message);
+        }
+        
+        function showBookmarkMessage(message) {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10B981;
+                color: white;
+                padding: 12px 20px;
+                border-radius: 8px;
+                z-index: 1000;
+                font-size: 14px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Check if page is already bookmarked (basic check)
+        function checkIfBookmarked() {
+            const bookmarkBtn = document.getElementById('bookmarkBtn');
+            const bookmarkIcon = document.getElementById('bookmarkIcon');
+            
+            // This is a basic visual indicator - in a real implementation,
+            // you might want to use localStorage to remember user's preference
+            const isBookmarked = localStorage.getItem('bookmarked_' + window.location.pathname);
+            
+            if (isBookmarked === 'true') {
+                bookmarkBtn.classList.add('text-primary-600');
+                bookmarkIcon.style.fill = 'currentColor';
+            }
+        }
+        
+        // Initialize bookmark state
+        document.addEventListener('DOMContentLoaded', checkIfBookmarked);
+    </script>
 </body>
 </html> 
