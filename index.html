@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
      crossorigin="anonymous"></script>
-     <meta name="google-adsense-account" content="ca-pub-8794607118520437">
-    <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CXH17REJKN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXH17REJKN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-CXH17REJKN');
-</script>
+      gtag('config', 'G-CXH17REJKN');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tao Te Ching - The Way of Virtue | Read All 81 Chapters Online</title>
     <meta name="description" content="Read the complete Tao Te Ching (道德经) by Laozi online. Explore all 81 chapters of ancient Chinese wisdom with original text and English translations. Perfect for philosophy students and wisdom seekers.">
@@ -79,8 +81,6 @@
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTUiIHN0cm9rZT0iIzM3NEZBOSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxwYXRoIGQ9Ik0xNiA4QzIwIDggMjMgMTEgMjMgMTVDMjMgMTkgMjAgMjIgMTYgMjJDMTIgMjIgOSAxOSA5IDE1QzkgMTEgMTIgOCAxNiA4WiIgZmlsbD0iIzM3NEZBOSIvPgo8Y2lyY2xlIGN4PSIxNiIgY3k9IjE1IiByPSI0IiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
-     crossorigin="anonymous"></script>
 
 	
 	
@@ -109,11 +109,11 @@
                         <a href="games.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Games</a>
                         <a href="timer.html" class="text-slate-600 hover:text-primary-600 font-medium transition-colors">Timer</a>
                     </div>
-                    <button id="bookmarkBtn" class="flex items-center space-x-1 p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200" onclick="toggleBookmark()" aria-label="Bookmark this page">
+                    <button id="bookmarkBtn" class="flex items-center space-x-2 px-3 py-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200 border border-transparent hover:border-primary-200" onclick="toggleBookmark()" aria-label="收藏此页面">
                         <svg id="bookmarkIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
                         </svg>
-                                                 <span id="bookmarkText" class="hidden md:inline text-sm font-medium">Bookmark</span>
+                        <span id="bookmarkText" class="hidden md:inline text-sm font-medium">收藏</span>
                     </button>
                     <button id="searchToggle" class="p-2 text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg transition-all duration-200" aria-label="Toggle search">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,11 +310,15 @@
             }
             
             // Visual feedback
-            bookmarkBtn.classList.add('text-primary-600', 'bg-primary-50');
+            bookmarkBtn.classList.add('text-primary-600', 'bg-primary-50', 'scale-105');
             bookmarkIcon.style.fill = 'currentColor';
+            bookmarkBtn.style.transform = 'scale(1.05)';
+            bookmarkBtn.style.transition = 'all 0.2s ease-in-out';
+            
             setTimeout(() => {
-                bookmarkBtn.classList.remove('text-primary-600', 'bg-primary-50');
+                bookmarkBtn.classList.remove('text-primary-600', 'bg-primary-50', 'scale-105');
                 bookmarkIcon.style.fill = 'none';
+                bookmarkBtn.style.transform = 'scale(1)';
             }, 1000);
         }
         
@@ -331,18 +335,45 @@
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: #10B981;
+                background: linear-gradient(135deg, #10B981, #059669);
                 color: white;
                 padding: 12px 20px;
-                border-radius: 8px;
+                border-radius: 12px;
                 z-index: 1000;
                 font-size: 14px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                font-weight: 500;
+                box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                animation: slideIn 0.3s ease-out;
             `;
+            
+            // Add animation keyframes
+            if (!document.querySelector('#bookmark-animation')) {
+                const style = document.createElement('style');
+                style.id = 'bookmark-animation';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(100%);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.remove();
+                notification.style.animation = 'slideOut 0.3s ease-in';
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
             }, 3000);
         }
         
